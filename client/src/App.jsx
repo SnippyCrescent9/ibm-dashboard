@@ -19,7 +19,11 @@ function App() {
   };
 
   return (
-    <div style={{padding: "20px"}}>
+    <div style={{
+      maxWidth: "500px",
+      margin: "0 auto",
+      fontFamily: "Arial"
+    }}>
       <h1>IBM Task Dashboard</h1>
       <TaskForm onAdd={addTask}/>
       <TaskList

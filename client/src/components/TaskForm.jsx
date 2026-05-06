@@ -13,6 +13,9 @@ export default function TaskForm ({onAdd}) {
             <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") handleSubmit();
+                }}
                 placeholder="Enter a task!"
             />
             <button onClick={handleSubmit}>Add</button>
