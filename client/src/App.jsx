@@ -24,15 +24,15 @@ function App() {
     setTasks(
       tasks.map(task =>
         task.id === id
-          ? {...tasks, completed: !task.completed}
+          ? {...task, completed: !task.completed}
           : task
       )
     );
   };
 
   const filteredTasks = tasks.filter(task => {
-    if (filter === "active") return !tasks.completed;
-    if (filter === "completed") return tasks.completed;
+    if (filter === "active") return !task.completed;
+    if (filter === "completed") return task.completed;
     return true;
   });
 
