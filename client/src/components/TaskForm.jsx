@@ -17,11 +17,12 @@ export default function TaskForm ({onAdd}) {
                 }}
             >
                 <input
+                    style={{marginRight: "5px"}}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Enter a task!"
                 />
-                <button type="submit">Add</button>
+                <button style={{marginLeft: "5px"}} type="submit">Add</button>
             </form>
         </div>
     );

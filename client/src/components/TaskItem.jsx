@@ -8,13 +8,17 @@ export default function TaskItem({task, onDelete, onToggle}) {
                     : "none"
             }}
         >
-            <input 
+            <input
+                style={{marginRight: "10px"}} 
                 type="checkbox"
                 checked={task.completed}
                 onChange={()=> onToggle(task.id)}
             />
             {task.title}
-            <button onClick={() => onDelete(task.id)}>
+            <button 
+                style={{marginLeft: "10px"}}
+                onClick={() => onDelete(task.id)}
+            >
                 Delete
             </button>
         </li>

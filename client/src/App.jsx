@@ -45,13 +45,22 @@ function App() {
       <h1>IBM Task Dashboard</h1>
       <TaskForm onAdd={addTask}/>
       <div style={{marginBottom: "20px"}}>
-        <button onClick={() => setFilter("all")}>
+        <button 
+          style={{marginRight: "5px", marginLeft: "5px"}}
+          onClick={() => setFilter("all")}
+        >
           All
         </button>
-        <button onClieck={()=> setFilter("active")}>
+        <button 
+          style={{marginRight: "5px", marginLeft: "5px"}}
+          onClieck={()=> setFilter("active")}
+        >
           Active
         </button>
-        <button onClick={() => setFilter("completed")}>
+        <button
+          style={{marginRight: "5px", marginLeft: "5px"}}
+          onClick={() => setFilter("completed")}
+        >
           Completed
         </button>
       </div>
