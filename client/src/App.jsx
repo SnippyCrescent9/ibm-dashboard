@@ -9,6 +9,8 @@ function App() {
     createTask("Build UI components")
   ]);
 
+  const [filter, setFilter] = useState("all");
+
   const addTask = (title) => {
     const newTask = createTask(title);
     setTasks([...tasks, newTask]);
@@ -17,6 +19,22 @@ function App() {
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
+
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map(task =>
+        task.id === id
+          ? {...tasks, completed: !task.completed}
+          : task
+      )
+    );
+  };
+
+  const filteredTasks = tasks.filter(task => {
+    if (filter === "active") return !tasks.completed;
+    if (filter === "completed") return tasks.completed;
+    return true;
+  });
 
   return (
     <div style={{
@@ -27,8 +45,9 @@ function App() {
       <h1>IBM Task Dashboard</h1>
       <TaskForm onAdd={addTask}/>
       <TaskList
-        tasks={tasks}
+        tasks={filteredTasks}
         onDelete={deleteTask}
+        onToggle={toggleTask}
       />
     </div>
   );
